@@ -1,0 +1,112 @@
+
+#include<iostream>  
+using namespace std;  
+void method1(float a,float b,float c,float d);  
+void method2(float a,float b,float c,float d);  
+void method3(float a,float b,float c,float d);  
+void method4(float a,float b,float c,float d);  
+void method5(float a,float b,float c,float d);  
+void method6(float a,float b,float c,float d);  
+void menu()  
+{  
+    cout<<"************************************************"<<endl;  
+    cout<<"*        欢迎使用学生成绩管理系统1.1           *"<<endl;  
+    cout<<"*        小组14   计算机2003班 2020.10.29      *"<<endl;  
+    cout<<"*        1、输入4位同学的代号和成绩            *"<<endl;  
+    cout<<"*        2、显示4位同学的代号和成绩列表        *"<<endl;  
+    cout<<"*        3、求4人平均分                        *"<<endl;  
+    cout<<"*        4、求4人总分                          *"<<endl;  
+    cout<<"*        5、查询某同学的分数                   *"<<endl;  
+    cout<<"*        6、统计及格率                         *"<<endl;  
+    cout<<"*        7、退出                               *"<<endl;  
+    cout<<"*        输入（1-7）进行选择                   *"<<endl;  
+    cout<<"************************************************"<<endl;  
+}  
+int main()  
+{  
+    int m,n,x;  
+    float a,b,c,d;  
+    cout<<"请输入密码："<<endl;  
+        for(n=1;n<=3;n++)  
+        {  
+            cin>>m;  //m为输入密码   
+            if(m==123)  
+           {  
+            menu();   
+            cout<<"请输入4个同学的成绩"<<endl;  
+            cin>>a>>b>>c>>d;   //成绩 a b c d   
+            do{cout<<"请选择需要执行的功能:"<<endl;  
+            cin>>x; //x指的是选择的功能   
+            switch(x)  
+           {  
+                case 1: method1(a,b,c,d); break;  
+                case 2: method2(a,b,c,d); break;  
+                case 3: method3(a,b,c,d); break;  
+                case 4: method4(a,b,c,d); break;  
+                case 5: method5(a,b,c,d); break;  
+                case 6: method6(a,b,c,d); break;  
+                case 7: break;  
+            }  
+            system("pause");  
+            system("cls");  
+            menu();}while(x!=7);  
+            break;  
+            }  
+        else cout<<"密码错误！"<<endl;   
+        }  
+        return 0;  
+}  
+  
+  
+void method1(float a,float b,float c,float d)  
+{  
+    cout<<"输入4个人的代号和成绩"<<endl;  
+    char u,i,o,p;  
+    cout<<"输入代号："<<endl;  
+    cin>>u>>i>>o>>p;  
+    cout<<"输入成绩："<<endl;  
+    cin>>a>>b>>c>>d;  
+}  
+void method2(float a,float b,float c,float d)  
+{cout<<"4位同学的代号和成绩分别为："<<endl;  
+               cout<<"同学A:"<<"代号为 A，成绩为"<<a<<endl;   
+               cout<<"同学B:"<<"代号为 B，成绩为"<<b<<endl;   
+               cout<<"同学C:"<<"代号为 C，成绩为"<<c<<endl;   
+               cout<<"同学D:"<<"代号为 D，成绩为"<<d<<endl;   
+  
+}  
+void method3(float a,float b,float c,float d)  
+{              int t;  
+               t=(a+b+c+d)/4;  
+               cout<<"4人平均分为: "<<t<<endl;  
+}  
+void method4(float a,float b,float c,float d)  
+{  
+    float q;  
+    q=a+b+c+d;  
+    cout<<"4人的总分是："<<q<<endl;  
+}  
+void method5(float a,float b,float c,float d)  
+{  
+    char e;  
+    cout<<"请输入同学代号："<<endl;  
+    cin>>e;  
+    switch(e)  
+    {  
+        case 'A':cout<<a<<endl; break;  
+        case 'B':cout<<b<<endl; break;  
+        case 'C':cout<<c<<endl; break;  
+        case 'D':cout<<d<<endl; break;  
+    }  
+}  
+void method6(float a,float b,float c,float d)  
+{  
+    float f,g;  
+    cout<<"及格率为："<<endl;  
+    if(a>=60) f=f+1;  
+    if(b>=60) f=f+1;  
+    if(c>=60) f=f+1;  
+    if(d>=60) f=f+1;  
+    g=f/4.0;  
+    cout<<g<<endl;  
+}  
